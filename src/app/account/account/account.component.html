@@ -1,0 +1,38 @@
+<mat-progress-spinner *ngIf="loading else account" mode="indeterminate"></mat-progress-spinner>
+
+<ng-template #account>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Account</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="padding: 10px 30px">
+      <mat-tab-group>
+        <mat-tab label="Basic Info">
+          <div class="tabs">
+            <span>Username: {{ user.username }}</span>
+          </div>
+        </mat-tab>
+        <mat-tab label="Children">
+          <div class="tabs">
+            <div *ngIf="user.children.length">
+              <span>Children</span>
+              <mat-list *ngFor="let child of user.children">
+                <mat-list-item>{{ child.firstName }}</mat-list-item>
+              </mat-list>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="addChild()">Add a child</button>
+
+          </div>
+        </mat-tab>
+        <mat-tab label="Chores">
+          <div class="tabs">
+
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Add Child</h1>
+<div mat-dialog-content style="min-height: 100px">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="child.name" required>
+  </mat-form-field>
+  <!-- <mat-checkbox color="primary" [(ngModel)]="childAccount">Create child account</mat-checkbox> -->
+
+  <!-- <ng-container *ngIf="childAccount">
+    <mat-form-field>
+      <input matInput placeholder="Username" [(ngModel)]="user.username">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" [(ngModel)]="user.password">
+    </mat-form-field>
+  </ng-container> -->
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="warn">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="child" cdkFocusInitial color="primary">Save</button>
+</div>

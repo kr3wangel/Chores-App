@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="fixed-header">
+  <mat-toolbar-row>
+    <button mat-button class="menu mat-icon-button" (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Chores</h1>
+    <a mat-button routerLink="/customer-list" routerLinkActive="active">Customers</a>
+    <a mat-button routerLink="/customer-create">Create Customer</a>
+    <a mat-button routerLink="/login" *ngIf="!authService.isLoggedIn">Login</a>
+    <a mat-button (click)="authService.logout()" *ngIf="authService.isLoggedIn">Logout</a>
+  </mat-toolbar-row>
+</mat-toolbar>

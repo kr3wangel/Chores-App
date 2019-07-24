@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StructureModule } from './structure/structure.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule.forRoot(),
+    StructureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

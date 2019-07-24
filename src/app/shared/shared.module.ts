@@ -1,6 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatCheckboxModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatTabsModule,
+  MatDialogModule,
+  MatListModule
+} from '@angular/material';
 
 
 @NgModule({
@@ -11,14 +26,41 @@ import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, Mat
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatDialogModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatDialogModule,
+    MatListModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot() {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        /* Add Shared Services here */
+      ]
+    };
+  }
+}
